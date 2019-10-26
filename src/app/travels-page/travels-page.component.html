@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-md-5">
+    <!-- We will build this form using ReactiveForm based on the property "form" inside travelsservice.ts  -->
+    <form [formGroup]="this.travelsService.form" (ngSubmit)="onSubmit()">
+      <input type="" formControlName="$key"><!-- this is a primary key for each record of travels and after that we can display the active form control-->
+      <div class="form-group">
+        <label>lco</label>
+        <input formControlName="loccation" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.loccation.errors}">
+        <!-- the value of the formControlName must match the name that we provided inside FormGroup in travelsService class -->
+        <div class="invalid-feedback" *ngIf="submitted && formControls.loccation.errors">This field is required</div>
+      </div>
+      <div class="form-group">
+        <label>country</label>
+        <input formControlName="country" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.country.errors}">
+        <div class="invalid-feedback" *ngIf="submitted && formControls.country.errors">This field is required</div>
+      </div>
+      <div class="form-group">
+        <label>visa</label>
+        <input formControlName="visa" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.visa.errors}">
+        <div class="invalid-feedback" *ngIf="submitted && formControls.visa.errors">This field is required</div>
+      </div>
+      <div class="form-group">
+        <label>currency</label>
+        <input formControlName="currency" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.currency.errors}">
+        <div class="invalid-feedback" *ngIf="submitted && formControls.currency.errors">This field is required</div>
+      </div>
+      <div class="form-group">
+        <label>activities</label>
+        <input formControlName="activities" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.activities.errors}">
+        <div class="invalid-feedback" *ngIf="submitted && formControls.activities.errors">This field is required</div>
+      </div>
+      <div class="form-group">
+        <input type="submit" class="btn btn-primary" value="Submit"><!-- the value of the formControlName must match the name that we provided inside FormGroup in travelsService class -->
+      </div>
+    </form>
+    <div class="alert alert-info" *ngIf="showSuccessMessage">
+      submitted successfully.
+    </div>
+  </div>
+  <div class="col-md-7">
+    <app-travels-list></app-travels-list>
+  </div>
+</div>
