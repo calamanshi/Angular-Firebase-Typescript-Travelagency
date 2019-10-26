@@ -11,5 +11,7 @@ export class FootbarComponent implements OnInit {
 
   ngOnInit() {
   }
-
+contact(){
+	alert("Our agent is on the way to your current location. It may be a Katze or a hamster!")
+}
 }
