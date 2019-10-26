@@ -1,31 +1,34 @@
+<div class="schleichdi">
+  
+<!-- <navbar></navbar> -->
 <div class="row">
   <div class="col-md-5">
     <!-- We will build this form using ReactiveForm based on the property "form" inside travelsservice.ts  -->
     <form [formGroup]="this.travelsService.form" (ngSubmit)="onSubmit()">
       <input type="" formControlName="$key"><!-- this is a primary key for each record of travels and after that we can display the active form control-->
       <div class="form-group">
-        <label>lco</label>
+        <label>Location</label>
         <input formControlName="loccation" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.loccation.errors}">
         <!-- the value of the formControlName must match the name that we provided inside FormGroup in travelsService class -->
         <div class="invalid-feedback" *ngIf="submitted && formControls.loccation.errors">This field is required</div>
       </div>
       <div class="form-group">
-        <label>country</label>
+        <label>Country</label>
         <input formControlName="country" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.country.errors}">
         <div class="invalid-feedback" *ngIf="submitted && formControls.country.errors">This field is required</div>
       </div>
       <div class="form-group">
-        <label>visa</label>
+        <label>Visa required</label>
         <input formControlName="visa" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.visa.errors}">
         <div class="invalid-feedback" *ngIf="submitted && formControls.visa.errors">This field is required</div>
       </div>
       <div class="form-group">
-        <label>currency</label>
+        <label>Currency</label>
         <input formControlName="currency" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.currency.errors}">
         <div class="invalid-feedback" *ngIf="submitted && formControls.currency.errors">This field is required</div>
       </div>
       <div class="form-group">
-        <label>activities</label>
+        <label>Activities</label>
         <input formControlName="activities" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.activities.errors}">
         <div class="invalid-feedback" *ngIf="submitted && formControls.activities.errors">This field is required</div>
       </div>
@@ -40,4 +43,5 @@
   <div class="col-md-7">
     <app-travels-list></app-travels-list>
   </div>
+</div>
 </div>
