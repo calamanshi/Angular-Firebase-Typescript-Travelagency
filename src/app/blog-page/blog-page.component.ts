@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-// import { TravelsService } from './shared/travels.service';
+
+import { TravelsService } from './shared/travels.service';
 
 @Component({
   selector: 'app-blog-page',
